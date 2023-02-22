@@ -23,7 +23,7 @@ class PopupViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let popup = UIHostingController(rootView: AlertHostView())
         popup.modalPresentationStyle = .overFullScreen
-        popup.view.backgroundColor = .red
+        popup.view.backgroundColor = .clear
         
         if self.presentedViewController == nil {
             AlertPresenter.shared.controller = self

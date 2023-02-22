@@ -40,7 +40,7 @@ struct AlertHostView: View {
                     }
                     .padding()
                     .frame(width: 300)
-                    .background(Color(uiColor: .systemBackground))
+                    .background(.thickMaterial)
                     .cornerRadius(10)
                     .shadow(radius: 3)
                     .transition(.scale)
@@ -93,10 +93,25 @@ struct AlertHostView: View {
             return .accentColor
         }
     }
+    
+    struct BackgroundBlurView: UIViewRepresentable {
+        func makeUIView(context: Context) -> UIView {
+            let view = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+            DispatchQueue.main.async {
+                view.superview?.superview?.backgroundColor = .clear
+            }
+            return view
+        }
+
+        func updateUIView(_ uiView: UIView, context: Context) {}
+    }
 
 }
 
 struct AlertView_Previews: PreviewProvider {
+    
+    
+    
     static var previews: some View {
         AlertHostView()
     }
