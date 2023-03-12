@@ -1,5 +1,5 @@
 //
-//  Popup.swift
+//  FP.swift
 //  FunctionalPopups
 //
 //  Created by Jenya Lebid on 2/18/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public class Popup {
+public class FP {
     
     static public var isSheetPresented: Bool {
         SheetPresenter.shared.baseSheet != nil

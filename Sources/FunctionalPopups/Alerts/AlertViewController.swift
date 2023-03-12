@@ -1,5 +1,5 @@
 //
-//  PopupViewController.swift
+//  AlertViewController.swift
 //  FunctionalPopups
 //
 //  Created by Jenya Lebid on 2/18/23.
@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class PopupViewController: UIViewController {
+class AlertViewController: UIViewController {
     
     let notificationCenter = NotificationCenter.default
     var presented: UIViewController!
@@ -21,13 +21,13 @@ class PopupViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        let popup = UIHostingController(rootView: AlertHostView())
-        popup.modalPresentationStyle = .overFullScreen
-        popup.view.backgroundColor = .clear
+        let alert = UIHostingController(rootView: AlertHostView())
+        alert.modalPresentationStyle = .overFullScreen
+        alert.view.backgroundColor = .clear
         
         if self.presentedViewController == nil {
             AlertPresenter.shared.controller = self
-            self.present(popup, animated: false, completion: nil)
+            self.present(alert, animated: false, completion: nil)
             presented = self.presentedViewController!
 
         }
@@ -37,7 +37,7 @@ class PopupViewController: UIViewController {
                 presented = presented.presentedViewController!
                 AlertPresenter.shared.controller = presented
             }
-            presented.present(popup, animated: false)
+            presented.present(alert, animated: false)
         }
     }
     

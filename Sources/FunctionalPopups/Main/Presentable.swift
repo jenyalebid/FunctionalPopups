@@ -21,7 +21,7 @@ public struct Presentable: ViewModifier {
             })
             .overlay {
                 if alertPresenter.currentAlert != nil {
-                    PopupRepresentable()
+                    AlertRepresentable()
                 }
             }
             .ignoresSafeArea()

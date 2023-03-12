@@ -1,6 +1,6 @@
 //
-//  SwiftUIView.swift
-//  
+//  AlertButton.swift
+//  FunctionalPopups
 //
 //  Created by Jenya Lebid on 2/20/23.
 //
